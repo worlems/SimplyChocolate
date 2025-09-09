@@ -601,11 +601,15 @@ img {
   text-align: center;
   color: #fff;
 }
+.foot-addr:not(:last-child) {
+  margin-bottom: 4px;
+}
 .foot-adress {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   margin-left: auto;
+  font-style: normal;
 }
 .spanspan {
   display: block;
