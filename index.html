@@ -349,17 +349,29 @@
           </address>
         </div>
         <span class="spanspan"></span>
-        <nav>
-          <ul class="footer-menu">
-            <li class="footer-menu-item"><a href="/">Home</a></li>
-            <li class="footer-menu-item">
-              <a href="#procces">How it’s made?</a>
-            </li>
-            <li class="footer-menu-item">
-              <a href="#reviews">Chocolate is loved</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="foot-wrapper">
+          <nav>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="/">Home</a></li>
+              <li class="footer-menu-item">
+                <a href="#procces">How it’s made?</a>
+              </li>
+              <li class="footer-menu-item">
+                <a href="#reviews">Chocolate is loved</a>
+              </li>
+            </ul>
+          </nav>
+          <form class="foot-form">
+            <input
+              class="subscribe-form-field"
+              type="email"
+              name="subscribe-form"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit" class="subscribe-btn">Subscribe</button>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -374,7 +386,7 @@
         <p class="modal-title">
           LEAVE A REVIEW ABOUT <span>OUR CHOCOLATE</span>
         </p>
-        <form action="review-form">
+        <form>
           <div class="review-form-field-wrapper">
             <label class="review-form-field-label" for="user-name">Name</label>
             <div class="review-form-input-wrapper">
