@@ -362,5 +362,142 @@
         </nav>
       </div>
     </footer>
+
+    <!-- Modal Window -->
+    <div class="backdrop">
+      <div class="modal">
+        <button class="modal-close-btn" type="button">
+          <svg class="modal-close-icon" width="28px" height="28px">
+            <use href="./icon/sprite.svg#icon-x-close"></use>
+          </svg>
+        </button>
+        <p class="modal-title">
+          LEAVE A REVIEW ABOUT <span>OUR CHOCOLATE</span>
+        </p>
+        <form action="review-form">
+          <div class="review-form-field-wrapper">
+            <label class="review-form-field-label" for="user-name">Name</label>
+            <div class="review-form-input-wrapper">
+              <input
+                class="review-form-field"
+                type="text"
+                id="user-name"
+                name="user-name"
+                pattern="[a-zA-Zа-яА-ЯіІєЄїЇґҐʼ]+"
+                required
+              />
+              <svg class="review-form-field-icon" width="24px" height="24px">
+                <use href="./icon/sprite.svg#icon-user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="review-form-field-wrapper">
+            <label class="review-form-field-label" for="user-email"
+              >Email</label
+            >
+            <div class="review-form-input-wrapper">
+              <input
+                class="review-form-field"
+                type="email"
+                id="user-email"
+                name="user-email"
+                required
+              />
+              <svg class="review-form-field-icon" width="24px" height="24px">
+                <use href="./icon/sprite.svg#icon-mail"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="review-form-field-wrapper">
+            <label class="review-form-field-label" for="user-phone"
+              >Phone number</label
+            >
+            <div class="review-form-input-wrapper">
+              <input
+                class="review-form-field"
+                type="tel"
+                id="user-phone"
+                name="user-phone"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                title="xxx-xxx-xx-xx"
+                required
+              />
+              <svg class="review-form-field-icon" width="24px" height="24px">
+                <use href="./icon/sprite.svg#icon-user"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="review-form-field-wrapper">
+            <label class="review-form-field-label" for="user-user-coment">
+              Comment
+            </label>
+            <textarea
+              class="review-form-textarea"
+              name="user-comment"
+              id="user-comment"
+              placeholder="Enter Text"
+              required
+            ></textarea>
+          </div>
+          <div class="review-form-policy-checkbox">
+            <input
+              class="review-form-checkbox visually-hidden"
+              type="checkbox"
+              name="privacy-policy"
+              id="privacy-policy"
+              value="true"
+              required
+            />
+            <label class="review-form-policy-label" for="privacy-policy">
+              <span class="review-form-custom-checkbox">
+                <svg
+                  class="review-form-checkbox-icon"
+                  width="10px"
+                  height="10px"
+                >
+                  <use href="./icon/sprite.svg#icon-checkbox"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="" class="privacy-policy-link">Privacy Policy</a></label
+            >
+          </div>
+          <button class="form-submit-btn" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <!-- Modal Window -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const openModalBtn = document.querySelector(".reviews-buttom");
+        const closeModalBtn = document.querySelector(".modal-close-btn");
+        const backdrop = document.querySelector(".backdrop");
+        const body = document.body;
+
+        openModalBtn.addEventListener("click", () => {
+          backdrop.classList.add("is-open");
+          body.classList.add("modal-open");
+        });
+
+        closeModalBtn.addEventListener("click", () => {
+          backdrop.classList.remove("is-open");
+          body.classList.remove("modal-open");
+        });
+
+        backdrop.addEventListener("click", (e) => {
+          if (e.target === backdrop) {
+            backdrop.classList.remove("is-open");
+            body.classList.remove("modal-open");
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
+            backdrop.classList.remove("is-open");
+            body.classList.remove("modal-open");
+          }
+        });
+      });
+    </script>
   </body>
 </html>

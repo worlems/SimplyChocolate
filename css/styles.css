@@ -6,6 +6,9 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #fafafa;
 }
+body.modal-open {
+  overflow: hidden;
+}
 h1,
 h2,
 h3,
@@ -630,3 +633,188 @@ img {
   color: #fd9222;
 }
 /* =============== /FOOTER =============== */
+
+/* ================== BACKDROP ================ */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms linear;
+}
+.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal {
+  padding: 38px 40px 40px 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 517px;
+  max-height: 794px;
+  height: 95%;
+  background-color: #fafafa;
+  border-radius: 15px;
+  overflow-y: auto;
+}
+.modal-close-btn {
+  position: absolute;
+  stroke: #111;
+  top: 24px;
+  right: 24px;
+  line-height: 0;
+  border: none;
+
+  background-color: transparent;
+  transition: stroke 250ms linear;
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  stroke: #fd9222;
+}
+.modal-title {
+  max-width: 298px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.16667;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111;
+  margin-bottom: 42px;
+}
+.modal-title span {
+  color: #fd9222;
+}
+
+/* ================== /BACKDROP ================ */
+/* =============== Review form Styles =============== */
+
+.review-form-field-wrapper {
+  margin-bottom: 18px;
+}
+.review-form-field-label {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.3);
+  margin-bottom: 8px;
+}
+.review-form-input-wrapper {
+  position: relative;
+}
+.review-form-field {
+  width: 100%;
+  height: 68px;
+  padding-left: 62px;
+  border: 1px solid rgba(17, 17, 17, 0.05);
+  border-radius: 13px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #111111;
+  background-color: transparent;
+  transition: border-color 250ms linear;
+}
+.review-form-field:focus {
+  outline: transparent;
+  border-color: #fd9222;
+}
+
+.review-form-field-icon {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: #404040;
+  transition: stroke 250ms linear;
+}
+
+.review-form-field:focus + .review-form-field-icon {
+  stroke: #fd9222;
+}
+.review-form-textarea {
+  width: 100%;
+  padding: 22px 24px;
+  height: 137px;
+  resize: none;
+  border: 1px solid rgba(17, 17, 17, 0.05);
+  border-radius: 13px;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #111111;
+  background-color: transparent;
+  transition: border-color 250ms linear;
+}
+.review-form-textarea::placeholder {
+  color: rgba(64, 64, 64, 0.3);
+}
+.review-form-textarea:focus {
+  outline: transparent;
+  border-color: #fd9222;
+}
+
+.review-form-policy-checkbox {
+  margin-bottom: 40px;
+}
+.review-form-policy-label {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.6);
+}
+.review-form-custom-checkbox {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  fill: transparent;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  cursor: pointer;
+  margin-right: 12px;
+}
+.review-form-checkbox:checked
+  + .review-form-policy-label
+  .review-form-custom-checkbox {
+  background-color: #fd9222;
+  border-color: #fd9222;
+  fill: #ffffff;
+}
+.review-form-checkbox:focus
+  + .review-form-policy-label
+  .review-form-custom-checkbox {
+  outline: 2px solid #fd9222;
+}
+
+.privacy-policy-link {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #fd9222;
+}
+.form-submit-btn {
+  border-radius: 100px;
+  padding: 14px 20px;
+  min-width: 117px;
+  background-color: #fd9222;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  border: none;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.form-submit-btn:hover,
+.form-submit-btn:focus {
+  background-color: #fcf1e0;
+  color: #fd9222;
+}
+
+/* =============== /Review form Styles =============== */
