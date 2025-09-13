@@ -57,9 +57,15 @@
             </a>
           </li>
         </ul>
+        <button class="mobile-menu-btn" type="button">
+          <svg class="open-mobile-menu-icon" width="28px" height="28px">
+            <use href="./icon/sprite.svg#icon-burger"></use>
+          </svg>
+        </button>
       </div>
     </header>
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div class="container container-hero">
           <h2 class="hero-title">
@@ -80,6 +86,7 @@
           </div>
         </div>
       </section>
+      <!-- BENEFITS -->
       <section class="benefits" id="benefits">
         <div class="container container-benefits">
           <h2 class="visually-hidden">Benefits</h2>
@@ -130,10 +137,12 @@
           </ul>
         </div>
       </section>
-      <section class="ingredients" id="ingredients">
+      <!-- INGREDIENTS -->
+      <section class="ingredients section-paddings" id="ingredients">
         <div class="container">
-          <h2 class="ingredients-title">
-            IT ALL ADDS UP TO ONE EXCEPTIONAL <span>TASTE</span> SENSATION
+          <h2 class="ingredients-title section-title">
+            IT ALL ADDS UP TO ONE EXCEPTIONAL
+            <span class="accent-color">TASTE</span> SENSATION
           </h2>
           <p class="ingredients-text">
             At Simply Chocolate, we believe that the secret to exceptional
@@ -143,11 +152,17 @@
           </p>
           <ul class="ingredients-list">
             <li class="ingredients-list-item">
-              <img
-                class="ingredients-image"
-                src="./img/chocolate.png"
-                alt="Chocolate"
-              />
+              <picture>
+                <source
+                  media="(max-width: 1199px)"
+                  srcset="./img/chocolate-mob.png" />
+
+                <img
+                  class="ingredients-image"
+                  src="./img/chocolate.png"
+                  alt="Chocolate"
+              /></picture>
+
               <p class="ingredients-list-item-text">MILK CHOCOLATE</p>
               <div class="ingredient-overlay">
                 <h3 class="ingredient-overlay-title">Milk chocolate</h3>
@@ -167,7 +182,13 @@
               </div>
             </li>
             <li class="ingredients-list-item">
-              <img class="ingredients-image" src="./img/milk.png" alt="Milk" />
+              <picture>
+                <source
+                  media="(max-width: 1199px)"
+                  srcset="./img/milk-mob.png" />
+
+                <img class="ingredients-image" src="./img/milk.png" alt="Milk"
+              /></picture>
               <p class="ingredients-list-item-text">Milk</p>
               <div class="ingredient-overlay">
                 <h3 class="ingredient-overlay-title">Milk</h3>
@@ -188,7 +209,13 @@
               </div>
             </li>
             <li class="ingredients-list-item">
-              <img class="ingredients-image" src="./img/orex.png" alt="Nuts" />
+              <picture>
+                <source
+                  media="(max-width: 1199px)"
+                  srcset="./img/orex-mob.png" />
+
+                <img class="ingredients-image" src="./img/orex.png" alt="Nuts"
+              /></picture>
               <p class="ingredients-list-item-text">Nuts</p>
               <div class="ingredient-overlay">
                 <h3 class="ingredient-overlay-title">nuts</h3>
@@ -209,11 +236,17 @@
               </div>
             </li>
             <li class="ingredients-list-item">
-              <img
-                class="ingredients-image"
-                src="./img/koffe.png"
-                alt="SWEET CHOCOLATE"
-              />
+              <picture>
+                <source
+                  media="(max-width: 1199px)"
+                  srcset="./img/cofee-mob.png" />
+
+                <img
+                  class="ingredients-image"
+                  src="./img/koffe.png"
+                  alt="SWEET CHOCOLATE"
+              /></picture>
+
               <p class="ingredients-list-item-text">sEMI - SWEET CHOCOLATE</p>
               <div class="ingredient-overlay">
                 <h3 class="ingredient-overlay-title">semi - sweet chocolate</h3>
@@ -236,20 +269,31 @@
           </ul>
         </div>
       </section>
-      <!-- How made section -->
+      <!-- HOW MADE -->
       <section class="how-made section-paddings" id="making-process">
-        <div class="container">
-          <h2 class="section-title how-made-title">
+        <div class="container how-made-container">
+          <h2 class="section-title how-made-title section-title">
             How it’s <span class="accent-color">made</span>?
           </h2>
           <div class="how-made-content-wrapper">
-            <img
-              class="how-made-img"
-              src="./img/procces.jpg"
-              alt="chocolate making process"
-              width="600"
-              height="400"
-            />
+            <picture class="how-made-pictr">
+              <source media="(min-width: 1200px)" srcset="./img/procces.jpg" />
+              <source
+                media="(min-width: 768px)"
+                srcset="./img/how-made-tab.jpg"
+              />
+              <source
+                media="(max-width: 767px)"
+                srcset="./img/how-made-mob.jpg"
+              />
+
+              <img
+                class="how-made-img"
+                src="./img/how-made-mob.jpg"
+                alt="chocolate making process"
+              />
+            </picture>
+
             <div class="how-made-text-content">
               <h3 class="how-made-list-title">
                 Try our chocolates today and discover the perfect balance of
@@ -280,10 +324,12 @@
           </div>
         </div>
       </section>
-
-      <section class="reviews" id="reviews">
+      <!-- REVIEWS -->
+      <section class="reviews section-paddings" id="reviews">
         <div class="container">
-          <h2 class="reviews-title"><span>chocolate</span> is loved</h2>
+          <h2 class="reviews-title section-title">
+            <span class="accent-color">chocolate</span> is loved
+          </h2>
           <div class="pos">
             <ul class="review-list">
               <li class="review-list-item">
@@ -331,7 +377,8 @@
         </div>
       </section>
     </main>
-    <footer class="footer">
+    <!-- FOOTER -->
+    <!-- <footer class="footer">
       <div class="container">
         <div class="foot-div">
           <h2 class="foot-titile">
@@ -373,10 +420,10 @@
           </form>
         </div>
       </div>
-    </footer>
+    </footer> -->
 
     <!-- Modal Window -->
-    <div class="backdrop">
+    <!-- <div class="backdrop">
       <div class="modal">
         <button class="modal-close-btn" type="button">
           <svg class="modal-close-icon" width="28px" height="28px">
@@ -477,38 +524,136 @@
           <button class="form-submit-btn" type="submit">Send</button>
         </form>
       </div>
+    </div> -->
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu">
+      <div class="container mobile-menu-container">
+        <button class="mobile-menu-close-btn" type="button">
+          <svg class="mobile-menu-close-icon" width="28px" height="28px">
+            <use href="./icon/sprite.svg#icon-x-close"></use>
+          </svg>
+        </button>
+        <nav class="mobile-menu-nav">
+          <ul class="mobile-menu-list">
+            <li class="mobile-menu-list-item">
+              <a href="" class="mobile-menu-list-link">Home</a>
+            </li>
+            <li class="mobile-menu-list-item">
+              <a href="" class="mobile-menu-list-link">How it’s made?</a>
+            </li>
+            <li class="mobile-menu-list-item">
+              <a href="" class="mobile-menu-list-link">Chocolate is loved</a>
+            </li>
+          </ul>
+        </nav>
+        <ul class="mobile-menu-social-list">
+          <li class="mobil-menu-social-list-item">
+            <a href="" class="mobile-menu-social-list-link">
+              <svg width="22px" height="22px">
+                <use href="./icon/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="mobil-menu-social-list-item">
+            <a href="" class="mobile-menu-social-list-link">
+              <svg width="22px" height="22px">
+                <use href="./icon/sprite.svg#icon-twitter"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
     <!-- Modal Window -->
+
     <script>
+      // document.addEventListener("DOMContentLoaded", () => {
+      //   const openModalBtn = document.querySelector(".reviews-buttom");
+      //   const closeModalBtn = document.querySelector(".modal-close-btn ");
+      //   const backdrop = document.querySelector(".backdrop");
+      //   const body = document.body;
+
+      //   openModalBtn.addEventListener("click", () => {
+      //     backdrop.classList.add("is-open");
+      //     body.classList.add("modal-open");
+      //   });
+
+      //   closeModalBtn.addEventListener("click", () => {
+      //     backdrop.classList.remove("is-open");
+      //     body.classList.remove("modal-open");
+      //   });
+
+      //   backdrop.addEventListener("click", (e) => {
+      //     if (e.target === backdrop) {
+      //       backdrop.classList.remove("is-open");
+      //       body.classList.remove("modal-open");
+      //     }
+      //   });
+
+      //   document.addEventListener("keydown", (e) => {
+      //     if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
+      //       backdrop.classList.remove("is-open");
+      //       body.classList.remove("modal-open");
+      //     }
+      //   });
+      // });
       document.addEventListener("DOMContentLoaded", () => {
         const openModalBtn = document.querySelector(".reviews-buttom");
         const closeModalBtn = document.querySelector(".modal-close-btn");
         const backdrop = document.querySelector(".backdrop");
         const body = document.body;
 
-        openModalBtn.addEventListener("click", () => {
-          backdrop.classList.add("is-open");
-          body.classList.add("modal-open");
-        });
+        if (openModalBtn && closeModalBtn && backdrop) {
+          openModalBtn.addEventListener("click", () => {
+            backdrop.classList.add("is-open");
+            body.classList.add("modal-open");
+          });
 
-        closeModalBtn.addEventListener("click", () => {
-          backdrop.classList.remove("is-open");
-          body.classList.remove("modal-open");
-        });
-
-        backdrop.addEventListener("click", (e) => {
-          if (e.target === backdrop) {
+          closeModalBtn.addEventListener("click", () => {
             backdrop.classList.remove("is-open");
             body.classList.remove("modal-open");
-          }
-        });
+          });
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
-            backdrop.classList.remove("is-open");
-            body.classList.remove("modal-open");
-          }
-        });
+          backdrop.addEventListener("click", (e) => {
+            if (e.target === backdrop) {
+              backdrop.classList.remove("is-open");
+              body.classList.remove("modal-open");
+            }
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
+              backdrop.classList.remove("is-open");
+              body.classList.remove("modal-open");
+            }
+          });
+        }
+
+        const burgerBtn = document.querySelector(".mobile-menu-btn");
+        const closeMenuBtn = document.querySelector(".mobile-menu-close-btn");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        if (burgerBtn && closeMenuBtn && mobileMenu) {
+          burgerBtn.addEventListener("click", () => {
+            mobileMenu.classList.add("is-open");
+            body.classList.add("menu-open");
+          });
+
+          closeMenuBtn.addEventListener("click", () => {
+            mobileMenu.classList.remove("is-open");
+            body.classList.remove("menu-open");
+          });
+
+          document.addEventListener("keydown", (e) => {
+            if (
+              e.key === "Escape" &&
+              mobileMenu.classList.contains("is-open")
+            ) {
+              mobileMenu.classList.remove("is-open");
+              body.classList.remove("menu-open");
+            }
+          });
+        }
       });
     </script>
   </body>

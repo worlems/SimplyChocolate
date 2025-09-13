@@ -1,4 +1,5 @@
-/* =============== COMMON STYLES =============== */
+/*  #region=============== COMMON STYLES =============== */
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +29,7 @@ ol {
 }
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 button {
@@ -55,127 +57,176 @@ img {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
+.accent-color {
+  color: #fd9222;
+}
+.section-paddings {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.section-title {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #111;
+}
 .container {
-  max-width: 1168px;
+  max-width: 367px;
   padding-left: 16px;
   padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* =============== /COMMON STYLES =============== */
+/* #endregion  =============== /COMMON STYLES =============== */
 
-/* =============== HEADER =============== */
+/*#region  =============== HEADER STYLES =============== */
+
 .header-wrapper {
   display: flex;
   align-items: center;
-}
-.header-nav {
-  display: flex;
-  flex-grow: 1;
   justify-content: space-between;
-  align-items: center;
 }
 .header-menu {
-  display: flex;
-  gap: 24px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  display: none;
 }
-.logo-svg {
-  margin-left: 4px;
+.header-icon-list {
+  display: none;
 }
 .header-logo {
   display: flex;
   align-items: center;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 1.11111;
+  font-size: 14px;
+  line-height: 1.29;
   letter-spacing: -0.03em;
   color: #111;
 }
-.header-link {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14286;
-  letter-spacing: -0.02em;
-  color: #111;
-  transition: color 250ms linear;
+.logo-svg {
+  margin-left: 4px;
 }
-.header-link-icon {
-  stroke: #111;
+
+/* #endregion  =============== /HEADER STYLES =============== */
+/* #region  =============== MOBILE MENU =============== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1823;
+  color: #ffffff;
+  transform: translateX(100%);
+  transition: transform 250ms linear;
+}
+.mobile-menu.is-open {
+  transform: translateX(0%);
+}
+.mobile-menu-container {
+  position: relative;
+  padding-top: 136px;
+  padding-bottom: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  stroke: #ffffff;
   transition: stroke 250ms linear;
 }
-.header-link-icon:hover,
-.header-link-icon:focus {
+.mobile-menu-close-btn:focus {
   stroke: #fd9222;
 }
-.header-link:hover,
-.header-link:focus {
+
+.mobile-menu-list-item:not(:last-child) {
+  margin-bottom: 24px;
+  transition: color 250ms linear;
+}
+.mobile-menu-list-link {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+.mobile-menu-list-link:focus {
   color: #fd9222;
 }
-
-.header-icon-list {
+.mobile-menu-social-list {
   display: flex;
   column-gap: 18px;
-  margin-left: 90px;
 }
-.header-svg-icon {
-  display: block;
-}
-/* =============== /HEADER  =============== */
 
-/* =============== HERO =============== */
+.mobile-menu-social-list-link {
+  display: block;
+  stroke: #ffffff;
+  transition: stroke 250ms linear;
+  line-height: 0;
+}
+.mobile-menu-social-list-link:focus {
+  stroke: #fd9222;
+}
+/* #endregion  =============== /MOBILE MENU =============== */
+
+/* #region  =============== HERO STYLES =============== */
 .hero {
   background-color: #1e1823;
-  max-width: 1200px;
+  max-width: 375px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 30px;
-  margin-bottom: 72px;
-  padding-bottom: 46px;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
   background-image: linear-gradient(
       rgba(30, 24, 35, 0.4),
       rgba(30, 24, 35, 0.4)
     ),
-    url("../img/bg.jpg");
+    url("../img/bg-mob.jpg");
   background-size: cover;
 }
+
 .container-hero {
-  padding-left: 56px;
-  padding-right: 56px;
+  padding-left: 36px;
+  padding-right: 36px;
 }
 .hero-title {
-  max-width: 484px;
-  padding-top: 375px;
-  margin-bottom: 32px;
+  padding-top: 395px;
+  max-width: 290px;
   font-weight: 500;
-  font-size: 28px;
-  line-height: 1.21429;
+  font-size: 20px;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   color: #fff;
+  margin-bottom: 32px;
 }
-
 .hero-bottom-block {
   display: flex;
-
-  align-items: center;
+  flex-wrap: wrap;
 }
 .hero-buttom {
-  min-width: 144px;
-  height: 45px;
+  min-width: 120px;
+  height: 41px;
   font-weight: 600;
   font-size: 14px;
   color: #fff;
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 12px 28px;
   background-color: #fd9222;
   cursor: pointer;
   margin-right: 14px;
   transition: background-color 250ms linear, color 250ms linear;
 }
-.hero-buttom:hover,
 .hero-buttom:focus {
   background-color: #fcf1e0;
   color: #fd9222;
@@ -185,11 +236,12 @@ img {
   font-weight: 600;
   font-size: 14px;
   color: #fff;
-  height: 45px;
+  height: 41px;
   border-radius: 100px;
-  padding: 14px 40px;
-  min-width: 183px;
+  padding: 12px 28px;
+  min-width: 159px;
   transition: border 250ms linear, color 250ms linear;
+  margin-bottom: 32px;
 }
 .how-its-made-lik:hover,
 .how-its-made-lik:focus {
@@ -201,15 +253,14 @@ img {
   align-items: center;
   column-gap: 14px;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
+  font-size: 12px;
+  line-height: 1.16667;
   letter-spacing: -0.03em;
   color: #fff;
-  margin-left: auto;
+  margin-right: auto;
   fill: #fd9222;
   transition: color 250ms linear, fill 250ms linear;
 }
-.skroll-down-link:hover,
 .skroll-down-link:focus {
   color: #fd9222;
   fill: #fff;
@@ -220,27 +271,22 @@ img {
   justify-content: center;
   background-color: #fff;
   border-radius: 50px;
-  width: 38px;
-  height: 38px;
+  width: 28px;
+  height: 28px;
   transition: background-color 250ms linear;
 }
-.skroll-down-link:hover .scroll-colo,
 .skroll-down-link:focus .scroll-colo {
   background-color: #fd9222;
 }
-/* =============== /HERO =============== */
-
-/* =============== BENEFITS =============== */
+/* #endregion =============== /HERO STYLES =============== */
+/* #region =============== BENEFITS STYLES =============== */
 .benefits {
   background-color: #1e1823;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
-.container-benefits {
-  padding-left: 52px;
-  padding-right: 52px;
-}
+
 .benefits-icon-wrapper {
   display: flex;
   align-items: center;
@@ -253,22 +299,10 @@ img {
 }
 .benefits-list {
   display: flex;
-  column-gap: 70px;
+  flex-wrap: wrap;
+  row-gap: 38px;
 }
-.benefits-list-item {
-  position: relative;
-  width: calc((100% - 2 * 70px) / 3);
-}
-.benefits-list-item:not(:last-child)::after {
-  position: absolute;
-  content: "";
-  top: 50%;
-  right: -18px;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 1px;
-  height: 124px;
-}
+
 .benefits-title {
   font-weight: 600;
   font-size: 18px;
@@ -277,37 +311,22 @@ img {
 }
 .benefits-text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: -0.02em;
   color: rgba(255, 255, 255, 0.7);
 }
-/* =============== /BENEFITS =============== */
-
-/* =============== INGREDIENTS =============== */
-
-.ingredients {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
+/* #endregion =============== /BENEFITS STYLES =============== */
+/* #region =============== INGREDIENTS =============== */
 
 .ingredients-title {
-  max-width: 411px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.16667;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #111;
+  max-width: 283px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
 }
-.ingredients-title span {
-  color: #fd9222;
-}
+
 .ingredients-text {
-  max-width: 486px;
+  max-width: 335px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -321,12 +340,12 @@ img {
 .ingredients-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 19px;
+  row-gap: 20px;
 }
 .ingredients-list-item {
+  width: 100%;
   position: relative;
   overflow: hidden;
-  width: calc((100% - 3 * 19px) / 4);
   border-radius: 15px;
   padding-top: 28px;
   padding-bottom: 28px;
@@ -346,7 +365,7 @@ img {
 .ingredients-image {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 34px;
+  margin-bottom: 25px;
 }
 .ingredients-list-item-text {
   font-weight: 600;
@@ -354,7 +373,7 @@ img {
   line-height: 1.28571;
   letter-spacing: -0.02em;
   text-transform: uppercase;
-  padding-left: 32px;
+  padding-left: 28px;
 }
 .ingredient-overlay {
   position: absolute;
@@ -403,6 +422,7 @@ img {
   border: 1px solid #fd9222;
 }
 .ingredient-overlay-text {
+  max-width: 279px;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.28571;
@@ -413,52 +433,38 @@ img {
   overflow-y: auto;
   flex-grow: 1;
   scrollbar-width: none;
+  max-height: 1000px;
 }
-/* =============== /INGREDIENTS =============== */
+/* #endregion  =============== /INGREDIENTS =============== */
+/* #region =============== HOW MADE   =============== */
 
-/* =============== How made Styles =============== */
-.how-made {
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-.section-title {
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.17;
-  letter-spacing: -0.03em;
-  text-align: center;
-  text-transform: uppercase;
-  color: #111111;
-}
 .how-made-title {
-  margin-bottom: 50px;
+  margin-bottom: 32px;
 }
-.accent-color {
-  color: #fd9222;
+.how-made-img {
+  width: 335px;
+  height: 500px;
+  margin-bottom: 20px;
 }
 .how-made-content-wrapper {
   display: flex;
-  column-gap: 20px;
+  flex-direction: column;
 }
 
 .how-made-text-content {
   flex-grow: 1;
-  padding: 32px;
+  padding: 20px 14px;
   border-radius: 15px;
   background-color: #ffffff;
 }
 
-.how-made-list {
-  padding-right: 26px;
-}
-
 .how-made-list-title {
-  width: 350px;
+  width: 307px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33;
   color: #111111;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .how-made-list-item {
@@ -483,31 +489,14 @@ img {
 }
 
 .how-made-list-item:not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
-/* =============== /How made Styles =============== */
 
-/* =============== REVIEWS =============== */
-.reviews {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-.reviews-title {
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.16667;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  text-align: center;
-  color: #111;
-  margin-bottom: 91px;
-}
-.reviews-title span {
-  color: #fd9222;
-}
+/* #endregion =============== /HOW MADE  =============== */
+/* #region =============== /REVIEWS  =============== */
 
 .review-list {
-  display: flex;
+  /* display: flex; */
 
   gap: 28px;
 }
@@ -563,307 +552,417 @@ img {
   background-color: #fd9222;
   color: #ffffff;
 }
-/* =============== /REVIEWS =============== */
+/* #endregion =============== REVIEWS  =============== */
+/* #region  MAX-WIDTH 767PX  */
+@media screen and (max-width: 767px) {
+  .mobile-menu-btn {
+    background-color: transparent;
+    stroke: #111111;
+    line-height: 0;
+    transition: stroke 250ms linear;
+  }
+  .mobile-menu-btn:focus {
+    stroke: #fd9222;
+  }
+  .header {
+    padding-top: 20px;
+    padding-bottom: 14px;
+  }
+}
+/* #endregion  MAX-WIDTH 767PX  */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .how-made-container {
+    padding-left: 61px;
+    padding-right: 61px;
+  }
+}
+@media screen and (min-width: 768px) {
+  /* #region ===============  COMMON STYLES TAB =============== */
+  .section-paddings {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .section-title {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+  .container {
+    max-width: 736px;
+  }
+  /* #endregion =============== /COMMON STYLES TAB =============== */
 
-/* =============== FOOTER =============== */
-.footer {
-  background-color: #1e1823;
-}
-.foot-div {
-  display: flex;
-  padding-top: 50px;
-  padding-bottom: 54px;
-}
-.foot-titile {
-  font-weight: 500;
-  font-size: 28px;
-  line-height: 1.21429;
-  letter-spacing: -0.02em;
-  color: #fff;
-  max-width: 300px;
-}
-.foot-titile span {
-  color: #fd9222;
-}
-.foot-text {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.28571;
-  text-align: center;
-  color: #fff;
-  padding-bottom: 16px;
-}
-.foot-addr {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.28571;
-  letter-spacing: -0.02em;
-  text-align: center;
-  color: #fff;
-}
-.foot-addr:not(:last-child) {
-  margin-bottom: 4px;
-}
-.foot-adress {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  margin-left: auto;
-  font-style: normal;
-}
-.spanspan {
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 1136px;
-  height: 0px;
-  transform: rotate(-180deg);
-  margin-bottom: 24px;
-}
-.footer-menu {
-  display: flex;
-  column-gap: 24px;
-  padding-bottom: 86px;
-}
-.footer-menu-item a {
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 1.14286;
-  letter-spacing: -0.02em;
-  color: #fff;
-  transition: color 250ms linear;
-}
+  /* #region =============== HEADER STYLES TAB =============== */
 
-.footer-menu-item a:hover,
-.footer-menu-item a:focus {
-  color: #fd9222;
-}
-.foot-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-.foot-form {
-  display: flex;
-  column-gap: 8px;
-}
-.subscribe-form-field {
-  border: 1.5px solid rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
-  font-weight: 400;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  padding: 13px 24px;
-  width: 313px;
-  height: 52px;
-  background-color: transparent;
-  color: #ffffff;
-  transition: border 250ms linear;
-}
-.subscribe-form-field::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-}
-.subscribe-form-field:focus {
-  outline: transparent;
-  border: 1px solid #fd9222;
-}
-.subscribe-btn {
-  border-radius: 100px;
-  padding: 18px 20px;
-  min-width: 137px;
-  background-color: #fd9222;
-  font-weight: 600;
-  font-size: 14px;
-  color: #fff;
-  transition: color 250ms linear, background-color 250ms linear;
-}
-.subscribe-btn:hover,
-.subscribe-btn:focus {
-  color: #fd9222;
-  background-color: #fcf1e0;
-}
-/* =============== /FOOTER =============== */
+  .header-nav {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-/* ================== BACKDROP ================ */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 250ms linear;
-}
-.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-.modal {
-  padding: 38px 40px 40px 40px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 517px;
-  max-height: 794px;
-  height: 95%;
-  background-color: #fafafa;
-  border-radius: 15px;
-  overflow-y: auto;
-}
-.modal-close-btn {
-  position: absolute;
-  stroke: #111;
-  top: 24px;
-  right: 24px;
-  line-height: 0;
-  border: none;
+  .header-menu {
+    display: flex;
+    column-gap: 24px;
+  }
 
-  background-color: transparent;
-  transition: stroke 250ms linear;
-}
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-  stroke: #fd9222;
-}
-.modal-title {
-  max-width: 298px;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 1.16667;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  color: #111;
-  margin-bottom: 42px;
-}
-.modal-title span {
-  color: #fd9222;
-}
+  .header-icon-list {
+    display: flex;
+    column-gap: 18px;
+    margin-left: 48px;
+  }
 
-/* ================== /BACKDROP ================ */
-/* =============== Review form Styles =============== */
+  .header-link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    color: #111;
+    transition: color 250ms linear;
+  }
+  .header-link-icon {
+    display: block;
+    stroke: #111;
+    transition: stroke 250ms linear;
+    line-height: 0;
+  }
+  .header-link-icon:hover,
+  .header-link-icon:focus {
+    stroke: #fd9222;
+  }
+  .header-link:hover,
+  .header-link:focus {
+    color: #fd9222;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+  /* #endregion =============== /HEADER STYLES  TAB =============== */
+  /* #region =============== HERO STYLES TAB =============== */
+  .hero {
+    max-width: 768px;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    background-image: linear-gradient(
+        rgba(30, 24, 35, 0.4),
+        rgba(30, 24, 35, 0.4)
+      ),
+      url("../img/bg-tab.jpg");
+    background-size: cover;
+  }
+  .container-hero {
+    padding-left: 56px;
+    padding-right: 56px;
+  }
+  .how-its-made-lik {
+    margin-bottom: 0;
+  }
 
-.review-form-field-wrapper {
-  margin-bottom: 18px;
-}
-.review-form-field-label {
-  display: block;
-  font-weight: 400;
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.3);
-  margin-bottom: 8px;
-}
-.review-form-input-wrapper {
-  position: relative;
-}
-.review-form-field {
-  width: 100%;
-  height: 68px;
-  padding-left: 62px;
-  border: 1px solid rgba(17, 17, 17, 0.05);
-  border-radius: 13px;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  color: #111111;
-  background-color: transparent;
-  transition: border-color 250ms linear;
-}
-.review-form-field:focus {
-  outline: transparent;
-  border-color: #fd9222;
+  .hero-title {
+    padding-top: 671px;
+    max-width: 484px;
+    font-size: 28px;
+    line-height: 1.21;
+  }
+
+  .hero-buttom {
+    min-width: 144px;
+    height: 45px;
+    padding: 14px 40px;
+    transition: background-color 250ms linear, color 250ms linear;
+  }
+  .hero-buttom:hover {
+    background-color: #fcf1e0;
+    color: #fd9222;
+  }
+  .how-its-made-lik {
+    height: 45px;
+    border-radius: 100px;
+    padding: 14px 40px;
+    min-width: 183px;
+  }
+  .skroll-down-link {
+    font-size: 14px;
+    line-height: 1.17;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  .skroll-down-link:hover {
+    color: #fd9222;
+    fill: #fff;
+  }
+  .scroll-colo {
+    width: 38px;
+    height: 38px;
+  }
+  .skroll-down-link:hover .scroll-colo {
+    background-color: #fd9222;
+  }
+  /* #endregion =============== /HERO STYLES TAB =============== */
+  /* #region =============== BENEFITS STYLES TAB =============== */
+  .benefits {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 80px;
+  }
+
+  .benefits-list {
+    gap: 32px 60px;
+  }
+
+  .benefits-list-item {
+    position: relative;
+    width: calc((100% - 2 * 32px) / 2);
+  }
+
+  .benefits-text {
+    font-size: 14px;
+  }
+
+  /* #endregion =============== /BENEFITS STYLES TAB =============== */
+  /* #region  =============== INGREDIENTS TAB =============== */
+  .ingredients-title {
+    max-width: 411px;
+    margin-bottom: 28px;
+  }
+  .ingredients-text {
+    max-width: 486px;
+  }
+  .ingredients-list {
+    gap: 32px;
+  }
+  .ingredients-list-item {
+    width: calc((100% - 1 * 32px) / 2);
+  }
+  /* #endregion  =============== /INGREDIENTS TAB =============== */
+
+  /* #region =============== HOW MADE TAB  =============== */
+  .how-made-title {
+    margin-bottom: 50px;
+  }
+  .how-made-img {
+    width: 614px;
+    height: 400px;
+  }
+  .how-made-text-content {
+    padding: 32px;
+  }
+  .how-made-list-title {
+    width: 350px;
+  }
+  .how-made-list-item {
+    max-width: 480px;
+  }
+  /* #endregion =============== /HOW MADE TAB  =============== */
 }
 
-.review-form-field-icon {
-  position: absolute;
-  top: 50%;
-  left: 24px;
-  transform: translateY(-50%);
-  fill: none;
-  stroke: #404040;
-  transition: stroke 250ms linear;
-}
+@media screen and (min-width: 1200px) {
+  /* =============== COMMON STYLES DESC =============== */
+  .section-paddings {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .container {
+    max-width: 1168px;
+  }
+  /* =============== /COMMON STYLES DESC =============== */
 
-.review-form-field:focus + .review-form-field-icon {
-  stroke: #fd9222;
-}
-.review-form-textarea {
-  width: 100%;
-  padding: 22px 24px;
-  height: 137px;
-  resize: none;
-  border: 1px solid rgba(17, 17, 17, 0.05);
-  border-radius: 13px;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  color: #111111;
-  background-color: transparent;
-  transition: border-color 250ms linear;
-}
-.review-form-textarea::placeholder {
-  color: rgba(64, 64, 64, 0.3);
-}
-.review-form-textarea:focus {
-  outline: transparent;
-  border-color: #fd9222;
-}
+  /* #region =============== HEADER STYLES DESC =============== */
+  .header-icon-list {
+    margin-left: 90px;
+  }
+  .header-logo {
+    font-size: 18px;
+    line-height: 1.11;
+  }
+  /* #endregion =============== /HEADER STYLES  DESC=============== */
+  /* #region =============== HERO STYLES DESC =============== */
+  .hero {
+    max-width: 1200px;
+    border-radius: 30px;
+    margin-bottom: 72px;
+    padding-bottom: 40px;
+    background-image: linear-gradient(
+        rgba(30, 24, 35, 0.4),
+        rgba(30, 24, 35, 0.4)
+      ),
+      url("../img/bg.jpg");
+    background-size: cover;
+  }
 
-.review-form-policy-checkbox {
-  margin-bottom: 40px;
-}
-.review-form-policy-label {
-  font-size: 14px;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.6);
-}
-.review-form-custom-checkbox {
-  display: inline-flex;
-  width: 20px;
-  height: 20px;
-  align-items: center;
-  fill: transparent;
-  justify-content: center;
-  border-radius: 6px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  cursor: pointer;
-  margin-right: 12px;
-}
-.review-form-checkbox:checked
-  + .review-form-policy-label
-  .review-form-custom-checkbox {
-  background-color: #fd9222;
-  border-color: #fd9222;
-  fill: #ffffff;
-}
-.review-form-checkbox:focus
-  + .review-form-policy-label
-  .review-form-custom-checkbox {
-  outline: 2px solid #fd9222;
-}
+  .container-hero {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .hero-title {
+    padding-top: 381px;
+    max-width: 484px;
+  }
 
-.privacy-policy-link {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-  color: #fd9222;
-}
-.form-submit-btn {
-  border-radius: 100px;
-  padding: 14px 20px;
-  min-width: 117px;
-  background-color: #fd9222;
-  font-weight: 600;
-  font-size: 14px;
-  color: #fff;
-  border: none;
-  transition: background-color 250ms linear, color 250ms linear;
-}
+  /* #endregion =============== /HERO STYLES DESC =============== */
+  /* #region =============== BENEFITS STYLES DESC =============== */
+  .benefits {
+    margin-bottom: 50px;
+  }
 
-.form-submit-btn:hover,
-.form-submit-btn:focus {
-  background-color: #fcf1e0;
-  color: #fd9222;
-}
+  .container-benefits {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+  .benefits-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 365px;
+    margin-bottom: 22px;
+  }
+  .benefits-list {
+    column-gap: 70px;
+  }
+  .benefits-list-item {
+    position: relative;
+    width: calc((100% - 2 * 88px) / 3);
+  }
+  .benefits-list-item:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -18px;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 1px;
+    height: 124px;
+  }
+  /* #endregion =============== /BENEFITS STYLES DESC =============== */
+  /* #region =============== INGREDIENTS STYLE DESC =============== */
+  .ingredients-title {
+    max-width: 411px;
+    margin-bottom: 28px;
+  }
 
-/* =============== /Review form Styles =============== */
+  .ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+  }
+  .ingredients-list-item {
+    width: calc((100% - 3 * 19px) / 4);
+  }
+
+  .ingredients-image {
+    margin-bottom: 34px;
+  }
+  .ingredients-list-item-text {
+    padding-left: 32px;
+  }
+  .ingredient-overlay-text {
+    max-width: 230px;
+  }
+
+  /* #endregion =============== /INGREDIENTS STYLE DESC  =============== */
+  /* #region =============== HOW MADE DESC  =============== */
+
+  .how-made-content-wrapper {
+    flex-direction: row;
+    column-gap: 20px;
+  }
+
+  .how-made-list {
+    padding-right: 27px;
+  }
+
+  .how-made-list-title {
+    margin-bottom: 28px;
+  }
+
+  .how-made-img {
+    width: 600px;
+    height: 400px;
+    margin-bottom: 0;
+    max-width: none;
+  }
+  /* #endregion =============== /HOW MADE DESC  =============== */
+  /* #region =============== /REVIEWS DESC  =============== */
+  .reviews {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .reviews-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.16667;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #111;
+    margin-bottom: 91px;
+  }
+  .reviews-title span {
+    color: #fd9222;
+  }
+
+  .review-list {
+    display: flex;
+
+    gap: 28px;
+  }
+  .review-list-item {
+    position: relative;
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid rgba(17, 17, 17, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
+  }
+  .review-image {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+  }
+  .review-subtitle {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.33333;
+    text-align: center;
+    color: #111;
+    padding-top: 56px;
+  }
+  .review-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.02em;
+    text-align: center;
+    color: rgba(17, 17, 17, 0.7);
+    padding: 24px 24px;
+  }
+
+  .reviews-buttom {
+    display: block;
+    min-width: 222px;
+    margin-top: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #111;
+    border: 1px solid #fd9222;
+    border-radius: 100px;
+    padding: 14px 40px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 250ms linear, color 250ms linear;
+  }
+
+  .reviews-buttom:hover,
+  .reviews-buttom:focus {
+    background-color: #fd9222;
+    color: #ffffff;
+  }
+  /* #endregion =============== REVIEWS DESC  =============== */
+}
