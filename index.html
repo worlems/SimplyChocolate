@@ -17,6 +17,10 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -330,49 +334,57 @@
           <h2 class="reviews-title section-title">
             <span class="accent-color">chocolate</span> is loved
           </h2>
-          <div class="pos">
-            <ul class="review-list">
-              <li class="review-list-item">
-                <img
-                  class="review-image"
-                  src="./img/Ellipse.png"
-                  alt="Victoria Dobrzhanska"
-                />
-                <h3 class="review-subtitle">Victoria Dobrzhanska</h3>
-                <p class="review-text">
-                  I love this chocolate bar. Perfect combination of light crispy
-                  wafer, covered in a thin layer chocolate.
-                </p>
-              </li>
-              <li class="review-list-item">
-                <img
-                  class="review-image"
-                  src="./img/Ellipse-1.png"
-                  alt="Nazar Babenko"
-                />
-                <h3 class="review-subtitle">Nazar Babenko</h3>
-                <p class="review-text">
-                  This chocolate confection is a delight! A delight! The wafer
-                  is light and crisp, the hazelnut cream is smooth, and the
-                  chocolate is good.
-                </p>
-              </li>
-              <li class="review-list-item">
-                <img
-                  class="review-image"
-                  src="./img/Ellipse-2.png"
-                  alt="Olena Kampusch"
-                />
-                <h3 class="review-subtitle">Olena Kampusch</h3>
-                <p class="review-text">
-                  Chocolate is a family favourite treat. Love the delicious
-                  smooth chocolate and the creaminess inside. The wafer is soft
-                  but crunchy.
-                </p>
-              </li>
-            </ul>
-          </div>
 
+          <!-- SWIPER -->
+          <div class="swiper-container">
+            <div class="swiper">
+              <ul class="swiper-wrapper">
+                <li class="swiper-slide review-list-item">
+                  <img
+                    class="review-image"
+                    src="./img/Ellipse.png"
+                    alt="Victoria Dobrzhanska"
+                  />
+                  <h3 class="review-subtitle">Victoria Dobrzhanska</h3>
+                  <p class="review-text">
+                    I love this chocolate bar. Perfect combination of light
+                    crispy wafer, covered in a thin layer chocolate.
+                  </p>
+                </li>
+
+                <li class="swiper-slide review-list-item">
+                  <img
+                    class="review-image"
+                    src="./img/Ellipse-1.png"
+                    alt="Nazar Babenko"
+                  />
+                  <h3 class="review-subtitle">Nazar Babenko</h3>
+                  <p class="review-text">
+                    This chocolate confection is a delight! A delight! The wafer
+                    is light and crisp, the hazelnut cream is smooth, and the
+                    chocolate is good.
+                  </p>
+                </li>
+
+                <li class="swiper-slide review-list-item">
+                  <img
+                    class="review-image"
+                    src="./img/Ellipse-2.png"
+                    alt="Olena Kampusch"
+                  />
+                  <h3 class="review-subtitle">Olena Kampusch</h3>
+                  <p class="review-text">
+                    Chocolate is a family favourite treat. Love the delicious
+                    smooth chocolate and the creaminess inside. The wafer is
+                    soft but crunchy.
+                  </p>
+                </li>
+              </ul>
+
+              <!-- Точки (пагинация) -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
           <button type="button" class="reviews-buttom">Leave a review</button>
         </div>
       </section>
@@ -565,7 +577,7 @@
       </div>
     </div>
     <!-- Modal Window -->
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       // document.addEventListener("DOMContentLoaded", () => {
       //   const openModalBtn = document.querySelector(".reviews-buttom");
@@ -654,6 +666,29 @@
             }
           });
         }
+        const swiper = new Swiper(".swiper", {
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          slidesPerView: 3,
+          spaceBetween: 28,
+          slidesOffsetAfter: 0,
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 16,
+            },
+            1200: {
+              slidesPerView: 3,
+              spaceBetween: 28,
+            },
+          },
+        });
       });
     </script>
   </body>

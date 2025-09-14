@@ -441,6 +441,7 @@ img {
 .how-made-title {
   margin-bottom: 32px;
 }
+
 .how-made-img {
   width: 335px;
   height: 500px;
@@ -494,19 +495,18 @@ img {
 
 /* #endregion =============== /HOW MADE  =============== */
 /* #region =============== /REVIEWS  =============== */
-
-.review-list {
-  /* display: flex; */
-
-  gap: 28px;
+.reviews-title {
+  margin-bottom: 74px;
 }
+
 .review-list-item {
   position: relative;
-  flex: 1;
   background-color: #fff;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
+  overflow: visible;
+  height: auto;
 }
 .review-image {
   position: absolute;
@@ -529,19 +529,19 @@ img {
   letter-spacing: -0.02em;
   text-align: center;
   color: rgba(17, 17, 17, 0.7);
-  padding: 24px 24px;
+  padding: 24px 18px 42px 14px;
 }
 
 .reviews-buttom {
   display: block;
-  min-width: 222px;
-  margin-top: 50px;
+  min-width: 165px;
+  margin-top: 32px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 14px;
   color: #111;
   border: 1px solid #fd9222;
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 12px 28px;
   margin-left: auto;
   margin-right: auto;
   transition: background-color 250ms linear, color 250ms linear;
@@ -552,6 +552,52 @@ img {
   background-color: #fd9222;
   color: #ffffff;
 }
+.swiper-container {
+  position: relative;
+  overflow: visible;
+}
+
+.swiper {
+  overflow: hidden;
+  padding-top: 60px;
+  margin-top: -60px;
+}
+
+.swiper-wrapper {
+  overflow: visible;
+}
+
+.swiper-slide {
+  overflow: visible;
+}
+
+.swiper-pagination {
+  position: relative;
+}
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  bottom: auto !important;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 11px;
+  background-color: #ff7a00;
+}
+
 /* #endregion =============== REVIEWS  =============== */
 /* #region  MAX-WIDTH 767PX  */
 @media screen and (max-width: 767px) {
@@ -757,6 +803,28 @@ img {
     max-width: 480px;
   }
   /* #endregion =============== /HOW MADE TAB  =============== */
+  /* #region =============== REVIEWS TAB  =============== */
+  .reviews-title {
+    margin-bottom: 91px;
+  }
+  .review-text {
+    padding: 24px 14px 24px 14px;
+  }
+  .review-list-item {
+    margin-right: 16px;
+  }
+  .reviews-buttom {
+    min-width: 222px;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #111;
+
+    padding: 14px 40px;
+  }
+  .swiper-pagination {
+    margin-top: 31px;
+  }
+  /* #endregion =============== /REVIEWS TAB  =============== */
 }
 
 @media screen and (min-width: 1200px) {
@@ -889,80 +957,23 @@ img {
   }
   /* #endregion =============== /HOW MADE DESC  =============== */
   /* #region =============== /REVIEWS DESC  =============== */
-  .reviews {
-    padding-top: 50px;
-    padding-bottom: 50px;
+  .swiper-slide:last-child {
+    margin-right: 0 !important;
   }
   .reviews-title {
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1.16667;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    text-align: center;
-    color: #111;
     margin-bottom: 91px;
   }
-  .reviews-title span {
-    color: #fd9222;
-  }
 
-  .review-list {
-    display: flex;
-
-    gap: 28px;
-  }
-  .review-list-item {
-    position: relative;
-    flex: 1;
-    background-color: #fff;
-    border: 1px solid rgba(17, 17, 17, 0.1);
-    border-radius: 15px;
-    box-shadow: 0 9px 100px 0 rgba(17, 17, 17, 0.03);
-  }
-  .review-image {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%, -50%);
-  }
   .review-subtitle {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.33333;
-    text-align: center;
-    color: #111;
     padding-top: 56px;
   }
   .review-text {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.28571;
-    letter-spacing: -0.02em;
-    text-align: center;
-    color: rgba(17, 17, 17, 0.7);
     padding: 24px 24px;
   }
 
   .reviews-buttom {
-    display: block;
     min-width: 222px;
-    margin-top: 50px;
-    font-weight: 600;
-    font-size: 18px;
-    color: #111;
-    border: 1px solid #fd9222;
-    border-radius: 100px;
-    padding: 14px 40px;
-    margin-left: auto;
-    margin-right: auto;
-    transition: background-color 250ms linear, color 250ms linear;
   }
 
-  .reviews-buttom:hover,
-  .reviews-buttom:focus {
-    background-color: #fd9222;
-    color: #ffffff;
-  }
   /* #endregion =============== REVIEWS DESC  =============== */
 }
