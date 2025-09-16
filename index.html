@@ -439,12 +439,13 @@
     <div class="backdrop">
       <div class="modal">
         <button class="modal-close-btn" type="button">
-          <svg class="modal-close-icon" width="28px" height="28px">
+          <svg class="modal-close-icon">
             <use href="./icon/sprite.svg#icon-x-close"></use>
           </svg>
         </button>
         <p class="modal-title">
-          LEAVE A REVIEW ABOUT <span>OUR CHOCOLATE</span>
+          LEAVE A REVIEW ABOUT
+          <span>OUR CHOCOLATE</span>
         </p>
         <form>
           <div class="review-form-field-wrapper">
@@ -580,36 +581,6 @@
     <!-- Modal Window -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // document.addEventListener("DOMContentLoaded", () => {
-      //   const openModalBtn = document.querySelector(".reviews-buttom");
-      //   const closeModalBtn = document.querySelector(".modal-close-btn ");
-      //   const backdrop = document.querySelector(".backdrop");
-      //   const body = document.body;
-
-      //   openModalBtn.addEventListener("click", () => {
-      //     backdrop.classList.add("is-open");
-      //     body.classList.add("modal-open");
-      //   });
-
-      //   closeModalBtn.addEventListener("click", () => {
-      //     backdrop.classList.remove("is-open");
-      //     body.classList.remove("modal-open");
-      //   });
-
-      //   backdrop.addEventListener("click", (e) => {
-      //     if (e.target === backdrop) {
-      //       backdrop.classList.remove("is-open");
-      //       body.classList.remove("modal-open");
-      //     }
-      //   });
-
-      //   document.addEventListener("keydown", (e) => {
-      //     if (e.key === "Escape" && backdrop.classList.contains("is-open")) {
-      //       backdrop.classList.remove("is-open");
-      //       body.classList.remove("modal-open");
-      //     }
-      //   });
-      // });
       document.addEventListener("DOMContentLoaded", () => {
         const openModalBtn = document.querySelector(".reviews-buttom");
         const closeModalBtn = document.querySelector(".modal-close-btn");
